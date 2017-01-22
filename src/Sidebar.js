@@ -5,6 +5,10 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <p>MY RECIPE BOX</p>
+        <button>add recipe</button>
+        <p>RECIPE LIST</p>
+        
+
       </div>
     )
   }

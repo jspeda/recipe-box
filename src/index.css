@@ -30,3 +30,8 @@ body {
   flex: 4;
   min-height: 100%;
 }
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+}
