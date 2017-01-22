@@ -7,7 +7,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      recipes: {}
+      recipes: {
+        1: {},
+        2: {},
+        3: {},
+      }
     }
   }
 

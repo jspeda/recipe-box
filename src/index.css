@@ -8,6 +8,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   height: 100%;
+  background: #f9f7f7;
 }
 
 .main-container {
@@ -21,12 +22,18 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex: 1;
-  border: 1px solid goldenrod;
+  /*border: 1px solid goldenrod;*/
+  /*background: #abe0a9;*/
+  background: #efefef;
+  color: #535353;
   min-height: 100vh;
 }
 
 .content {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 4;
   min-height: 100%;
 }
@@ -34,4 +41,47 @@ body {
 .recipe-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+  background: #caebf2;
+  /*border: 1px solid goldenrod;*/
+  padding: 1%;
+  margin: 2%;
+}
+
+.recipe-title {
+  display: flex;
+  width: 100%;
+  padding: 1%;
+  justify-content: space-around;
+  border: 1px solid white;
+}
+
+.title-text {
+  color: #ff3b3f;
+  flex: 5;
+}
+
+.edit-delete {
+  flex: 1;
+}
+
+.recipe-contents-container {
+  display: flex;
+  height: 100%;
+  border: 1px solid blue;
+  width: 100%;
+  color: #535353;
+}
+
+.recipe-ingredients {
+  border: 1px solid red;
+  flex: 1;
+}
+
+.recipe-description {
+  border: 1px solid black;
+  flex: 4;
 }
