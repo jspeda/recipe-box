@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import RecipeCard from './RecipeCard';
 import Form from './Form';
 import './App.css';
+import base from './base';
 
 class App extends Component {
   constructor() {
@@ -12,6 +13,17 @@ class App extends Component {
       recipes: {
       }
     }
+  }
+
+  componentWillMount() {
+    this.ref = base.syncState('/', {
+      context: this,
+      state: 'recipes'
+    });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   addRecipe(recipe) {
