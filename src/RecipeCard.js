@@ -11,13 +11,11 @@ class RecipeCard extends Component {
         </div>
         <div className="recipe-contents-container">
           <ul className="recipe-ingredients">
-            <li>
             {
-              // do some transformation on here to get each ingredient on its
-              // own <li>
             details.ingredients
+              .split(';')
+              .map((item) => <li key={item}>{item}</li>)
             }
-            </li>
           </ul>
           <div className="recipe-description">{details.instructions}</div>
         </div>

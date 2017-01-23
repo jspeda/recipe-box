@@ -5,8 +5,8 @@ class Sidebar extends Component {
     const { recipes } = this.props;
     return (
       <div className="sidebar">
-        <p>MY RECIPE BOX</p>
-        <button>add recipe</button>
+        <h1>MY RECIPE BOX</h1>
+        <input placeholder="search" />
         <p>RECIPE LIST</p>
         <ul>
         {
