@@ -17,14 +17,19 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="recipe-form">
-        <form ref={(input) => this.recipeForm = input} onSubmit={(e) => this.createRecipe(e)}>
-          <input ref={(input) => this.title = input} type="text" placeholder="title" />
-          <input ref={(input) => this.ingredients = input} type="text" placeholder="ingredients" />
-          <textarea ref={(input) => this.instructions = input} placeholder="instructions" />
-          <button type="submit">add recipe</button>
-        </form>
-      </div>
+      <form ref={(input) => this.recipeForm = input} onSubmit={(e) => this.createRecipe(e)}>
+        <div className="recipe-form">
+          <div className="form-title-ingredients">
+            <input className="form-title" ref={(input) => this.title = input} type="text" placeholder="title" />
+            <textarea className="form-ingredients" ref={(input) => this.ingredients = input}
+              placeholder="ingredients - (separate items with ;)" />
+          </div>
+          <div className="form-instructions-submit">
+            <textarea className="instructions" ref={(input) => this.instructions = input} placeholder="instructions" />
+            <button type="submit">add recipe</button>
+          </div>
+        </div>
+      </form>
     )
   }
 };

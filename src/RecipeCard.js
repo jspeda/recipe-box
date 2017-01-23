@@ -10,7 +10,15 @@ class RecipeCard extends Component {
           <div className="edit-delete"><span><button>edit</button></span><span><button>delete</button></span></div>
         </div>
         <div className="recipe-contents-container">
-          <ul className="recipe-ingredients"><li>{details.ingredients}</li></ul>
+          <ul className="recipe-ingredients">
+            <li>
+            {
+              // do some transformation on here to get each ingredient on its
+              // own <li>
+            details.ingredients
+            }
+            </li>
+          </ul>
           <div className="recipe-description">{details.instructions}</div>
         </div>
       </div>

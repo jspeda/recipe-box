@@ -32,10 +32,48 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex: 4;
   min-height: 100%;
+}
+
+.recipe-form {
+  display: flex;
+  border: 1px solid black;
+  padding: 1%;
+  width: 800px;
+  overflow-x: auto;
+}
+
+.form-title-ingredients {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+}
+
+.form-title {
+  margin: 3%;
+  font-size: 30px;
+}
+
+.form-ingredients {
+  font-size: 15px;
+}
+
+.instructions {
+  border: 1px solid blue;
+}
+
+.form-instructions-submit {
+  display: flex;
+  flex: 2;
+}
+
+.instructions {
+  flex: 2;
+  margin-left: 2%;
 }
 
 .recipe-card {
