@@ -4,15 +4,18 @@ import RecipeCard from './RecipeCard';
 import Form from './Form';
 import './App.css';
 import base from './base';
+import Modal from 'react-modal';
 
 class App extends Component {
   constructor() {
     super();
     this.addRecipe = this.addRecipe.bind(this);
     this.removeRecipe = this.removeRecipe.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.state = {
-      recipes: {
-      }
+      recipes: {},
+      modalIsOpen: false
     }
   }
 
@@ -40,9 +43,25 @@ class App extends Component {
     this.setState({ recipes });
   }
 
+  openModal() {
+    this.setState({ modalIsOpen: true})
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false})
+  }
+
   render() {
     return (
       <div className="App">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="My Modal"
+        >
+        hi!
+
+        </Modal>
         <div className="main-container">
           <Sidebar recipes={this.state.recipes}/>
           <div className="content">
@@ -54,6 +73,8 @@ class App extends Component {
                   index={key}
                   details={this.state.recipes[key]}
                   removeRecipe={this.removeRecipe}
+                  openModal={this.openModal}
+                  closeModal={this.closeModal}
                 />)
             }
           </div>

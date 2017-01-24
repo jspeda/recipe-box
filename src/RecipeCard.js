@@ -8,7 +8,7 @@ class RecipeCard extends Component {
     return (
       <div className="recipe-card">
         <div className="recipe-title"><div className="title-text">{details.title}</div>
-          <div className="edit-delete"><span><button>edit</button></span>
+          <div className="edit-delete"><span><button onClick={this.props.openModal}>edit</button></span>
           <span><button onClick={() => this.props.removeRecipe(this.props.index)}>delete</button></span></div>
         </div>
         <div className="recipe-contents-container">
