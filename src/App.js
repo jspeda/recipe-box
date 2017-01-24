@@ -9,6 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.addRecipe = this.addRecipe.bind(this);
+    this.removeRecipe = this.removeRecipe.bind(this);
     this.state = {
       recipes: {
       }
@@ -33,6 +34,12 @@ class App extends Component {
     this.setState({recipes});
   }
 
+  removeRecipe(key) {
+    const recipes = {...this.state.recipes};
+    recipes[key] = null;
+    this.setState({ recipes });
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,7 +49,12 @@ class App extends Component {
             <Form addRecipe={this.addRecipe}/>
             {
               Object.keys(this.state.recipes)
-                .map(key => <RecipeCard key={key} index={key} details={this.state.recipes[key]}/>)
+                .map(key => <RecipeCard
+                  key={key}
+                  index={key}
+                  details={this.state.recipes[key]}
+                  removeRecipe={this.removeRecipe}
+                />)
             }
           </div>
         </div>
