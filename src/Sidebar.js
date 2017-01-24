@@ -14,7 +14,11 @@ class Sidebar extends Component {
             .keys(recipes)
             // maybe want to separate the map callback
             // into its own function
-            .map(key => <li key={key}>{recipes[key].title}</li>)
+            .map(key => <li key={key}>
+              {console.log(key)}
+              <button>
+              {recipes[key].title}
+            </button></li>)
         }
         </ul>
 

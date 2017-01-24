@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.ref = base.syncState('/', {
+    this.ref = base.syncState('/?', {
       context: this,
       state: 'recipes'
     });
