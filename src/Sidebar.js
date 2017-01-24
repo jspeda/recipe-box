@@ -16,8 +16,10 @@ class Sidebar extends Component {
             // into its own function
             .map(key => <li key={key}>
               {console.log(key)}
-              <button>
+              <button onClick={
+                () => this.props.switchSingle()}>
               {recipes[key].title}
+
             </button></li>)
         }
         </ul>

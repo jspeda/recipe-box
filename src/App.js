@@ -10,9 +10,11 @@ class App extends Component {
     super();
     this.addRecipe = this.addRecipe.bind(this);
     this.removeRecipe = this.removeRecipe.bind(this);
+    this.renderSingle = this.renderSingle.bind(this);
+    this.switchSingle = this.switchSingle.bind(this);
     this.state = {
-      recipes: {
-      }
+      recipes: {},
+      single: false
     }
   }
 
@@ -29,8 +31,8 @@ class App extends Component {
 
   addRecipe(recipe) {
     const recipes = {...this.state.recipes};
-    const timestamp = Date.now();
-    recipes[`recipe-${timestamp}`] = recipe;
+    const time = Date.now();
+    recipes[`recipe-${time}`] = recipe;
     this.setState({recipes});
   }
 
@@ -40,26 +42,50 @@ class App extends Component {
     this.setState({ recipes });
   }
 
-  render() {
+  switchSingle() {
+    const isSingle = !this.state.single;
+    this.setState({ single: isSingle });
+  }
+
+  renderSingle(key) {
     return (
-      <div className="App">
-        <div className="main-container">
-          <Sidebar recipes={this.state.recipes}/>
-          <div className="content">
-            <Form addRecipe={this.addRecipe}/>
-            {
-              Object.keys(this.state.recipes)
-                .map(key => <RecipeCard
-                  key={key}
-                  index={key}
-                  details={this.state.recipes[key]}
-                  removeRecipe={this.removeRecipe}
-                />)
-            }
+      <div>
+        <RecipeCard
+          key={key}
+          index={key}
+          details={this.state.recipes[key]}
+          removeRecipe={this.removeRecipe}
+        />
+      </div>
+    )
+  }
+
+  render() {
+    if (!this.single) {
+      return (
+        <div className="App">
+          <div className="main-container">
+            <Sidebar recipes={this.state.recipes} switchSingle={this.switchSingle}/>
+            <div className="content">
+              <Form addRecipe={this.addRecipe}/>
+              {
+                Object.keys(this.state.recipes)
+                  .map(key => <RecipeCard
+                    key={key}
+                    index={key}
+                    details={this.state.recipes[key]}
+                    removeRecipe={this.removeRecipe}
+                  />)
+              }
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+      return <div>{this.renderSingle()}</div>
+    }
+
   }
 }
 
