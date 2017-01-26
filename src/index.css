@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
 html {
   margin: 0;
   height: 100%;
@@ -6,7 +8,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Overpass', sans-serif;
   height: 100%;
   background: #f9f7f7;
 }
@@ -27,6 +29,10 @@ body {
   background: #efefef;
   color: #535353;
   min-height: 100vh;
+}
+
+.sidebar-button-list {
+  list-style: none;
 }
 
 .content {

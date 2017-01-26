@@ -8,7 +8,7 @@ class Sidebar extends Component {
         <h1>MY RECIPE BOX</h1>
         <input placeholder="search" />
         <p>RECIPE LIST</p>
-        <ul>
+        <ul className="sidebar-button-list">
         {
           Object
             .keys(recipes)
