@@ -10,6 +10,7 @@ class App extends Component {
     super();
     this.addRecipe = this.addRecipe.bind(this);
     this.removeRecipe = this.removeRecipe.bind(this);
+    this.editRecipe = this.editRecipe.bind(this);
     this.state = {
       recipes: {
       }
@@ -34,6 +35,14 @@ class App extends Component {
     this.setState({recipes});
   }
 
+  editRecipe(key, editedRecipe) {
+    console.log('??????????')
+    const recipes = {...this.state.recipes};
+    recipes[key] = editedRecipe;
+    console.log(recipes[key]);
+    this.setState({recipes});
+  }
+
   removeRecipe(key) {
     const recipes = {...this.state.recipes};
     recipes[key] = null;
@@ -54,6 +63,7 @@ class App extends Component {
                   index={key}
                   details={this.state.recipes[key]}
                   removeRecipe={this.removeRecipe}
+                  editRecipe={this.editRecipe}
                 />)
             }
           </div>
