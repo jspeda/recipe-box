@@ -8,13 +8,15 @@ class RecipeCard extends Component {
   }
 
 
-  handleEdit(e, key) {
+  // can just make handleEdit take in a parameter for whichever recipe property to edit actually...
+  handleEdit(e, key, recipeProperty) {
     console.log('hello?');
     const recipe = this.props.details;
     console.log(key);
-    const editedRecipe = {
+    const property = recipeProperty
+    var editedRecipe = {
       ...recipe,
-      title: e.target.innerHTML
+      [recipeProperty]: e.target.innerHTML
     };
     this.props.editRecipe(key, editedRecipe);
   }
@@ -24,7 +26,7 @@ class RecipeCard extends Component {
 
     return (
       <div className="recipe-card">
-        <div className="recipe-title"><div className="title-text" name="title" contentEditable={true} onInput={(e) => this.handleEdit(e, this.props.index)}>{details.title}</div>
+        <div className="recipe-title"><div className="title-text" contentEditable={true} onInput={(e) => this.handleEdit(e, this.props.index, "title")}>{details.title}</div>
           <div className="edit-delete"><span><button>edit</button></span>
           <span><button onClick={() => this.props.removeRecipe(this.props.index)}>delete</button></span></div>
         </div>
