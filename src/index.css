@@ -29,6 +29,7 @@ body {
   background: #efefef;
   color: #535353;
   min-height: 100vh;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .sidebar-button-list {
@@ -87,12 +88,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 800px;
+  width: 700px;
   height: 400px;
   background: #efefef;
   /*border: 1px solid goldenrod;*/
   padding: 1%;
   margin: 2%;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3)
 }
 
 .recipe-title {
@@ -101,12 +103,15 @@ body {
   width: 100%;
   padding: 1%;
   justify-content: space-around;
-  border: 1px solid white;
 }
 
 .title-text {
   color: #535353;
   flex: 5;
+}
+
+mark {
+  background-color: #bdeef2;
 }
 
 .edit-delete {
@@ -116,13 +121,11 @@ body {
 .recipe-contents-container {
   display: flex;
   height: 100%;
-  border: 1px solid blue;
   width: 100%;
   color: #535353;
 }
 
 .recipe-ingredients {
-  border: 1px solid red;
   font-size: 20px;
   flex: 1;
 }
@@ -130,4 +133,6 @@ body {
 .recipe-description {
   border: 1px solid black;
   flex: 4;
+  text-align: left;
+  padding: 1%;
 }

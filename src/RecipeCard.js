@@ -26,7 +26,7 @@ class RecipeCard extends Component {
 
     return (
       <div className="recipe-card">
-        <div className="recipe-title"><div className="title-text" contentEditable={true} onInput={(e) => this.handleEdit(e, this.props.index, "title")}>{details.title}</div>
+        <div className="recipe-title"><div className="title-text" contentEditable={true} onInput={(e) => this.handleEdit(e, this.props.index, "title")}><mark>{details.title}</mark></div>
           <div className="edit-delete"><span><button>edit</button></span>
           <span><button onClick={() => this.props.removeRecipe(this.props.index)}>delete</button></span></div>
         </div>
