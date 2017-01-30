@@ -24,9 +24,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex: 1;
-  /*border: 1px solid goldenrod;*/
-  /*background: #abe0a9;*/
-  background: #efefef;
+  background: #ffa270;
   color: #535353;
   min-height: 100vh;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -47,14 +45,14 @@ body {
 
 .recipe-form {
   display: flex;
-  border: 1px solid black;
+  background: #efefef;
   padding: 1%;
   width: 800px;
   overflow-x: auto;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 .form-title-ingredients {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   padding: 0%;
@@ -70,7 +68,6 @@ body {
 }
 
 .instructions {
-  border: 1px solid blue;
 }
 
 .form-instructions-submit {
@@ -94,7 +91,7 @@ body {
   /*border: 1px solid goldenrod;*/
   padding: 1%;
   margin: 2%;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.3)
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 .recipe-title {
