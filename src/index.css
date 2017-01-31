@@ -43,6 +43,13 @@ body {
   min-height: 100%;
 }
 
+.list-of-recipes {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .recipe-form {
   display: flex;
   background: #efefef;

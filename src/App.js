@@ -74,17 +74,19 @@ class App extends Component {
           <Sidebar recipes={this.state.recipes}/>
           <div className="content">
             <Form addRecipe={this.addRecipe}/>
-            {
-              Object.keys(this.state.recipes)
-                .map(key => <RecipeCard
-                  key={key}
-                  index={key}
-                  details={this.state.recipes[key]}
-                  removeRecipe={this.removeRecipe}
-                  openModal={this.openModal}
-                  editRecipe={this.editRecipe}
-                />)
-            }
+            <div className="list-of-recipes">
+              {
+                Object.keys(this.state.recipes)
+                  .map(key => <RecipeCard
+                    key={key}
+                    index={key}
+                    details={this.state.recipes[key]}
+                    removeRecipe={this.removeRecipe}
+                    openModal={this.openModal}
+                    editRecipe={this.editRecipe}
+                  />)
+              }
+            </div>
           </div>
         </div>
       </div>
