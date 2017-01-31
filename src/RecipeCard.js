@@ -7,8 +7,6 @@ class RecipeCard extends Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
-
-  // can just make handleEdit take in a parameter for whichever recipe property to edit actually...
   handleEdit(e, key, recipeProperty) {
     console.log('hello?');
     const recipe = this.props.details;
@@ -42,7 +40,7 @@ class RecipeCard extends Component {
             {
             details.ingredients
               .split(';')
-              .map((item) => <li key={item}>{item}</li>)
+              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, this.props.index, "ingredients")}key={item}>{item}</li>)
             }
           </ul>
           <div
