@@ -40,7 +40,7 @@ class RecipeCard extends Component {
             {
             details.ingredients
               .split(';')
-              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, this.props.index, "ingredients")}key={item}>{item}</li>)
+              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, this.props.index, "ingredients")} key={item}>{item}</li>)
             }
           </ul>
           <div

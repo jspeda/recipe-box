@@ -31,7 +31,26 @@ body {
 }
 
 .sidebar-button-list {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-button-list ul {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0;
   list-style: none;
+}
+
+
+.sidebar-button {
+  height: 50px;
+  width: 300px;
+  text-align: center;
+  margin: 4px;
+  font-size: 20px;
 }
 
 .content {

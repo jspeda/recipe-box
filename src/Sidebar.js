@@ -8,20 +8,19 @@ class Sidebar extends Component {
         <h1>MY RECIPE BOX</h1>
         <input placeholder="search" />
         <p>RECIPE LIST</p>
-        <ul className="sidebar-button-list">
-        {
-          Object
-            .keys(recipes)
-            // maybe want to separate the map callback
-            // into its own function
-            .map(key => <li key={key}>
-              {console.log(key)}
-              <button>
-              {recipes[key].title}
-            </button></li>)
-        }
-        </ul>
-
+        <div className="sidebar-button-list">
+          <ul>
+          {
+            Object
+              .keys(recipes)
+              .map(key => <li key={key}>
+                <div className="sidebar-button-container">
+                <button className="sidebar-button">
+                {recipes[key].title}
+              </button></div></li>)
+          }
+          </ul>
+        </div>
       </div>
     )
   }
