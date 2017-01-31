@@ -14,9 +14,10 @@ class RecipeCard extends Component {
     const recipe = this.props.details;
     console.log(key);
     const property = recipeProperty
+    console.log(e.target.innerText);
     var editedRecipe = {
       ...recipe,
-      [recipeProperty]: e.target.innerHTML
+      [recipeProperty]: e.target.innerText
     };
     this.props.editRecipe(key, editedRecipe);
   }
@@ -26,19 +27,29 @@ class RecipeCard extends Component {
 
     return (
       <div className="recipe-card">
-        <div className="recipe-title"><div className="title-text" contentEditable={true} onInput={(e) => this.handleEdit(e, this.props.index, "title")}><mark>{details.title}</mark></div>
-          <div className="edit-delete"><span><button>edit</button></span>
+        <div className="recipe-title">
+          <div
+            className="title-text"
+            contentEditable={true}
+            onInput={(e) => this.handleEdit(e, this.props.index, "title")}><mark>{details.title}</mark>
+          </div>
+          <div className="edit-delete"><span><button onClick={this.props.openModal}>edit</button></span>
           <span><button onClick={() => this.props.removeRecipe(this.props.index)}>delete</button></span></div>
         </div>
         <div className="recipe-contents-container">
-          <ul className="recipe-ingredients">
+          <ul
+            className="recipe-ingredients">
             {
             details.ingredients
               .split(';')
               .map((item) => <li key={item}>{item}</li>)
             }
           </ul>
-          <div className="recipe-description">{details.instructions}</div>
+          <div
+            className="recipe-description"
+            contentEditable={true}
+            onInput={(e) => this.handleEdit(e, this.props.index, "instructions")}>{details.instructions}
+          </div>
         </div>
       </div>
     )
