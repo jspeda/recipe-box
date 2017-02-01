@@ -15,7 +15,10 @@ class Sidebar extends Component {
               .keys(recipes)
               .map(key => <li key={key}>
                 <div className="sidebar-button-container">
-                <button className="sidebar-button">
+                <button
+                  onClick={() => this.props.scrollToRecipe(key)}
+                  className="sidebar-button"
+                  >
                 {recipes[key].title}
               </button></div></li>)
           }

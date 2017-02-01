@@ -24,7 +24,7 @@ class RecipeCard extends Component {
     const { details } = this.props;
 
     return (
-      <div className="recipe-card">
+      <div className="recipe-card" id={this.props.index}>
         <div className="recipe-title">
           <div
             className="title-text"
@@ -40,13 +40,13 @@ class RecipeCard extends Component {
             {
             details.ingredients
               .split(';')
-              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, this.props.index, "ingredients")} key={item}>{item}</li>)
+              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, details.index, "ingredients")} key={item}>{item}</li>)
             }
           </ul>
           <div
             className="recipe-description"
             contentEditable={true}
-            onInput={(e) => this.handleEdit(e, this.props.index, "instructions")}>{details.instructions}
+            onInput={(e) => this.handleEdit(e, details.index, "instructions")}>{details.instructions}
           </div>
         </div>
       </div>

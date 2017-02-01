@@ -14,6 +14,7 @@ class App extends Component {
     this.editRecipe = this.editRecipe.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.scrollToRecipe = this.scrollToRecipe.bind(this);
     this.state = {
       recipes: {},
       modalIsOpen: false
@@ -60,6 +61,12 @@ class App extends Component {
     this.setState({ modalIsOpen: false });
   }
 
+  scrollToRecipe(key) {
+    const e = document.getElementById(key);
+    e.scrollIntoView();
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -71,7 +78,10 @@ class App extends Component {
             <Form />
         </Modal>
         <div className="main-container">
-          <Sidebar recipes={this.state.recipes}/>
+          <Sidebar
+            recipes={this.state.recipes}
+            scrollToRecipe={this.scrollToRecipe}
+          />
           <div className="content">
             <Form addRecipe={this.addRecipe}/>
             <div className="list-of-recipes">
