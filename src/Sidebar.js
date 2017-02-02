@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import gh from './gh.png'
 
 class Sidebar extends Component {
   constructor() {
@@ -44,6 +45,10 @@ class Sidebar extends Component {
               </button></div></li>)
           }
           </ul>
+        </div>
+        <div className="footer">
+          created by jspeda
+          <a href="https://www.github.com/jspeda"><img src={gh} className="github" alt="github" /></a>
         </div>
       </div>
     )

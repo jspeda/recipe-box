@@ -64,6 +64,19 @@ body {
   font-size: 20px;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+.github {
+  padding-top: 15px;
+}
+
+
+
 .content {
   display: flex;
   flex-direction: column;
