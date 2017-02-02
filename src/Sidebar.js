@@ -21,6 +21,7 @@ class Sidebar extends Component {
       <div className="sidebar">
         <h1>MY RECIPE BOX</h1>
         <input
+          className="searchbar"
           placeholder="search"
           onChange={(e) => this.handleSearchChange(e.target.value)}
           value={this.state.search}
