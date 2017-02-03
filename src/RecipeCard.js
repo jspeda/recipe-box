@@ -8,11 +8,8 @@ class RecipeCard extends Component {
   }
 
   handleEdit(e, key, recipeProperty) {
-    console.log('hello?');
     const recipe = this.props.details;
     console.log(key);
-    const property = recipeProperty
-    console.log(e.target.innerText);
     var editedRecipe = {
       ...recipe,
       [recipeProperty]: e.target.innerText
@@ -40,7 +37,9 @@ class RecipeCard extends Component {
             {
             details.ingredients
               .split(';')
-              .map((item) => <li contentEditable={true} onBlur={(e) => this.handleEdit(e, details.index, "ingredients")} key={item}>{item}</li>)
+              .map((item) => <li
+                contentEditable={true}
+                onBlur={(e) => this.handleEdit(e, this.props.index, "ingredients")} key={item}>{item}</li>)
             }
           </ul>
           <div

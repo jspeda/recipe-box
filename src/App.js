@@ -14,7 +14,6 @@ class App extends Component {
     this.scrollToRecipe = this.scrollToRecipe.bind(this);
     this.state = {
       recipes: {},
-      modalIsOpen: false
     }
   }
 
