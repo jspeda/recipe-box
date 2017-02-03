@@ -31,7 +31,7 @@ class RecipeCard extends Component {
             contentEditable={true}
             onInput={(e) => this.handleEdit(e, this.props.index, "title")}><mark>{details.title}</mark>
           </div>
-          <div className="edit-delete"><span><button onClick={this.props.openModal}>edit</button></span>
+          <div className="edit-delete">
           <span><button onClick={() => this.props.removeRecipe(this.props.index)}>delete</button></span></div>
         </div>
         <div className="recipe-contents-container">
