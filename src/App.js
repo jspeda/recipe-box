@@ -37,7 +37,6 @@ class App extends Component {
   }
 
   editRecipe(key, editedRecipe) {
-    console.log('??????????')
     const recipes = {...this.state.recipes};
     recipes[key] = editedRecipe;
     console.log(recipes[key]);

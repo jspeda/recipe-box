@@ -1,3 +1,3 @@
 # My Recipe Box
 
-A personal recipe repository with basic Firebase integration created with React. 
+A personal, searchable recipe repository with basic Firebase integration created with React. 
