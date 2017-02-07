@@ -12,9 +12,15 @@ class App extends Component {
     this.removeRecipe = this.removeRecipe.bind(this);
     this.editRecipe = this.editRecipe.bind(this);
     this.scrollToRecipe = this.scrollToRecipe.bind(this);
+    this.setUser = this.setUser.bind(this);
     this.state = {
       recipes: {},
+      uid: null
     }
+  }
+
+  setUser(userInfo) {
+    this.setState({ uid: userInfo})
   }
 
   componentWillMount() {
@@ -61,6 +67,8 @@ class App extends Component {
           <Sidebar
             recipes={this.state.recipes}
             scrollToRecipe={this.scrollToRecipe}
+            uid={this.state.uid}
+            setUser={this.setUser}
           />
           <div className="content">
             <Form addRecipe={this.addRecipe}/>

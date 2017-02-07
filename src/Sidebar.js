@@ -1,13 +1,51 @@
 import React, { Component } from 'react';
-import gh from './gh.png'
+import base from './base';
+import gh from './gh.png';
 
 class Sidebar extends Component {
   constructor() {
     super();
+    this.renderLogin = this.renderLogin.bind(this);
+    this.authenticate = this.authenticate.bind(this);
+    this.authHandler = this.authHandler.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.state = {
       search: ''
     };
+  }
+
+  componentDidMount() {
+    base.onAuth(user => {
+      if(user) {
+        this.authHandler(null, { user });
+      }
+    })
+  }
+
+  authenticate(provider) {
+    console.log(`trying to log in with ${provider}`);
+    base.authWithOAuthPopup(provider, this.authHandler);
+  }
+
+  authHandler(err, authData) {
+    console.log(authData);
+    if(err){
+      console.error(err);
+      return;
+    }
+
+    this.props.setUser(authData.user.uid)
+
+  }
+
+  renderLogin() {
+    return (
+      <div className='login'>
+        <button className="google" onClick={() => this.authenticate('google')}>
+          sign in with google
+        </button>
+      </div>
+    )
   }
 
   handleSearchChange(searchTerm) {
@@ -17,6 +55,10 @@ class Sidebar extends Component {
 
 
   render() {
+
+    if (!this.props.uid) {
+      return <div>{this.renderLogin()}</div>
+    }
     const { recipes } = this.props;
     return (
       <div className="sidebar">
