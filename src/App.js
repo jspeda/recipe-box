@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import RecipeCard from './RecipeCard';
 import Form from './Form';
-import './App.css';
 import base from './base';
 
 class App extends Component {

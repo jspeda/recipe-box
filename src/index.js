@@ -10,8 +10,8 @@ const Root = () => {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Splash} />
-          <Route exact path="/:userId" component={App} />
+          {/* <Route exact path="/" component={Splash} /> */}
+          <Route exact path="/" component={App} />
         </div>
       </Router>
     )
