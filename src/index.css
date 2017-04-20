@@ -67,6 +67,7 @@ body {
 .footer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: auto;
   margin-bottom: 50px;
 }
@@ -74,8 +75,6 @@ body {
 .github {
   padding-top: 15px;
 }
-
-
 
 .content {
   display: flex;
